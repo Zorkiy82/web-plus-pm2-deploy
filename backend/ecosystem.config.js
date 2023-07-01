@@ -15,8 +15,8 @@ module.exports = {
     {
       name: 'mesto-backend',
       script: './app.js',
-      env_deploy: {
-        NODE_ENV: 'deploy',
+      env_production: {
+        NODE_ENV: 'production',
         PORT,
         JWT_SECRET,
         DB_ADDRESS,
