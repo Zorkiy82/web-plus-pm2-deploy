@@ -37,7 +37,7 @@ module.exports = {
       repo: 'git@github.com:Zorkiy82/web-plus-pm2-deploy.git',
       path: DEPLOY_PATH,
       'pre-deploy-local': `scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
-      'post-deploy': 'mkdir ~/mesto-backend && scp ./backend/* ~/mesto-backend && cd ~/mesto-backend && rm -rf ~/repo && npm i && npm run build',
+      'post-deploy': 'mkdir ~/mesto-backend && cp -Rf ./backend/* ~/mesto-backend && cd ~/mesto-backend && rm -rf ~/repo && npm i && npm run build',
     },
   },
 };
