@@ -36,7 +36,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'git@github.com:Zorkiy82/web-plus-pm2-deploy.git',
       path: DEPLOY_PATH,
-      'pre-deploy': `sudo scp ./*.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
+      'pre-deploy': `sudo scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       'post-deploy': 'npm i && npm run build',
     },
   },
