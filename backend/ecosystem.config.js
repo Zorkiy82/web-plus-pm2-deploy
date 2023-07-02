@@ -36,7 +36,7 @@ module.exports = {
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
       repo: 'git@github.com:Zorkiy82/web-plus-pm2-deploy.git',
-      path: DEPLOY_PATH,
+      path: TEMP_PATH,
       'pre-deploy-local': `scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${TEMP_PATH}`,
       'post-deploy': `mkdir ${DEPLOY_PATH} && cp -Rf ./backend/* ${DEPLOY_PATH} && cp ${TEMP_PATH}/.env ${DEPLOY_PATH} && rm -rf ${TEMP_PATH} && npm i && npm run build && pm2 start ecosystem.config.js`,
     },
