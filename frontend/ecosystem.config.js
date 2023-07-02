@@ -16,7 +16,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'git@github.com:Zorkiy82/web-plus-pm2-deploy.git',
       path: TEMP_PATH,
-      'post-deploy': `mkdir ${DEPLOY_PATH} && cd ${TEMP_PATH}/frontend && npm i && npm run build && cp -Rf ./* ${DEPLOY_PATH} && rm -rf ${TEMP_PATH}`,
+      'post-deploy': `mkdir ${DEPLOY_PATH} && cd ./frontend && npm i && npm run build && cp -Rf ./build/* ${DEPLOY_PATH} && rm -rf ${TEMP_PATH}`,
     },
   },
 };
